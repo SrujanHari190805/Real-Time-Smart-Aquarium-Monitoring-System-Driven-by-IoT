@@ -85,34 +85,34 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 - Restores temperature to optimal range (**26–28°C**) rapidly
 - System response and stabilisation are clearly visible in the temperature-vs-time graph
 
-<p align="center"> <img src="images/heating.svg" alt="Heating system graph" width="90%"> </p>
+<p align="center"> <img src="images/heating.svg" alt="Heating system graph" width="300"> </p>
 
 ### Cooling System
 - Activates when water temperature exceeds **33°C**
 - Gradually reduces temperature in a stable, controlled manner
 - Prevents dangerous thermal extremes that can harm aquatic life
 
-<p align="center"> <img src="images/cooling.svg" alt="Cooling system graph" width="90%"> </p>
+<p align="center"> <img src="images/cooling.svg" alt="Cooling system graph" width="300"> </p>
 
 ### Water Level Regulation
 - Automated relay-based control keeps water level within set parameters
 - Minimal deviation from target level; rapid response to fluctuations
 
-<p align="center"> <img src="images/water_level.svg" alt="Water level graph" width="90%"> </p>
+<p align="center"> <img src="images/water_level.svg" alt="Water level graph" width="300"> </p>
 
 ### Power Management
 - Solar panels supply a significant portion of system energy needs
 - BMS ensures reliable continuous operation even during low-sunlight periods
 - Measurably reduces dependence on mains electricity
 
-<p align="center"> <img src="images/power.svg" alt="Power management graph" width="90%"> </p>
+<p align="center"> <img src="images/power.svg" alt="Power management graph" width="300"> </p>
 
 ### Video Monitoring
 - ESP32-CAM provides real-time visual monitoring of the aquarium
 - Enhanced visibility under varying lighting conditions
 - Complements sensor data for a comprehensive monitoring experience
 
-<p align="center"> <img src="images/cam.jpg" alt="ESP32-CAM feed" width="90%"> </p>
+<p align="center"> <img src="images/cam.jpg" alt="ESP32-CAM feed" width="300"> </p>
 
 ---
 
@@ -124,7 +124,7 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 - **Remote control** — manually adjust temperature thresholds or toggle heater/cooler directly from phone
 - **Live video** feed from ESP32-CAM
 
-<p align="center"> <img src="images/blynk.jpg" alt="Blynk dashboard" width="45%"> </p>
+<p align="center"> <img src="images/blynk.jpg" alt="Blynk dashboard" width="200"> </p>
 
 ---
 
