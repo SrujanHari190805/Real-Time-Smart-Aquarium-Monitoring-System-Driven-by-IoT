@@ -62,8 +62,7 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 | Battery + BMS | — | Energy storage + Battery Management System |
 | Cloud Platform | Blynk | Remote monitoring, alerts, historical data, manual control |
 
-![description](images/hardware.jpg)
-
+<p align="center"> <img src="images/hardware.jpg" alt="Hardware setup" width="90%"> </p>
 ---
 
 ## ⚙️ Automation Logic
@@ -86,34 +85,34 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 - Restores temperature to optimal range (**26–28°C**) rapidly
 - System response and stabilisation are clearly visible in the temperature-vs-time graph
 
-![description](images/heating.svg)
+<p align="center"> <img src="images/heating.svg" alt="Heating system graph" width="90%"> </p>
 
 ### Cooling System
 - Activates when water temperature exceeds **33°C**
 - Gradually reduces temperature in a stable, controlled manner
 - Prevents dangerous thermal extremes that can harm aquatic life
 
-![description](images/cooling.svg)
+<p align="center"> <img src="images/cooling.svg" alt="Cooling system graph" width="90%"> </p>
 
 ### Water Level Regulation
 - Automated relay-based control keeps water level within set parameters
 - Minimal deviation from target level; rapid response to fluctuations
 
-![description](images/water_level.svg)
+<p align="center"> <img src="images/water_level.svg" alt="Water level graph" width="90%"> </p>
 
 ### Power Management
 - Solar panels supply a significant portion of system energy needs
 - BMS ensures reliable continuous operation even during low-sunlight periods
 - Measurably reduces dependence on mains electricity
 
-![description](images/power.svg)
+<p align="center"> <img src="images/power.svg" alt="Power management graph" width="90%"> </p>
 
 ### Video Monitoring
 - ESP32-CAM provides real-time visual monitoring of the aquarium
 - Enhanced visibility under varying lighting conditions
 - Complements sensor data for a comprehensive monitoring experience
 
-![description](images/cam.jpg)
+<p align="center"> <img src="images/cam.jpg" alt="ESP32-CAM feed" width="90%"> </p>
 
 ---
 
@@ -125,7 +124,7 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 - **Remote control** — manually adjust temperature thresholds or toggle heater/cooler directly from phone
 - **Live video** feed from ESP32-CAM
 
-![description](images/blynk.jpg)
+<p align="center"> <img src="images/blynk.jpg" alt="Blynk dashboard" width="45%"> </p>
 
 ---
 
