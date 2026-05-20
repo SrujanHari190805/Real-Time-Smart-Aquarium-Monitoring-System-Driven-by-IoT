@@ -43,7 +43,7 @@ Traditional aquarium care requires constant manual monitoring and adjustments �
 Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 ```
 
-<img src="images/block.png" alt="System block diagram" width="450"/>
+![description](images/block.png)
 
 ---
 
@@ -62,7 +62,7 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 | Battery + BMS | — | Energy storage + Battery Management System |
 | Cloud Platform | Blynk | Remote monitoring, alerts, historical data, manual control |
 
-<img src="images/hardware.jpg" alt="Hardware setup photo" width="450"/>
+![description](images/hardware.jpg)
 
 ---
 
@@ -86,34 +86,34 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 - Restores temperature to optimal range (**26–28°C**) rapidly
 - System response and stabilisation are clearly visible in the temperature-vs-time graph
 
-<img src="images/heating.png" alt="Heating system performance graph" width="450"/>
+![description](images/heating.svg)
 
 ### Cooling System
 - Activates when water temperature exceeds **33°C**
 - Gradually reduces temperature in a stable, controlled manner
 - Prevents dangerous thermal extremes that can harm aquatic life
 
-<img src="images/cooling.png" alt="Cooling system performance graph" width="450"/>
+![description](images/cooling.svg)
 
 ### Water Level Regulation
 - Automated relay-based control keeps water level within set parameters
 - Minimal deviation from target level; rapid response to fluctuations
 
-<img src="images/water_level.png" alt="Water level regulation graph" width="450"/>
+![description](images/water_level.svg)
 
 ### Power Management
 - Solar panels supply a significant portion of system energy needs
 - BMS ensures reliable continuous operation even during low-sunlight periods
 - Measurably reduces dependence on mains electricity
 
-<img src="images/power.png" alt="Solar power management graph" width="450"/>
+![description](images/power.svg)
 
 ### Video Monitoring
 - ESP32-CAM provides real-time visual monitoring of the aquarium
 - Enhanced visibility under varying lighting conditions
 - Complements sensor data for a comprehensive monitoring experience
 
-<img src="images/cam.png" alt="ESP32-CAM live video feed" width="450"/>
+![description](images/cam.jpg)
 
 ---
 
@@ -125,7 +125,7 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 - **Remote control** — manually adjust temperature thresholds or toggle heater/cooler directly from phone
 - **Live video** feed from ESP32-CAM
 
-<img src="images/blynk.jpg" alt="Blynk app dashboard" width="450"/>
+![description](images/blynk.jpg)
 
 ---
 
