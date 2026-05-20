@@ -43,7 +43,7 @@ Traditional aquarium care requires constant manual monitoring and adjustments �
 Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 ```
 
-![description](images/block.png)
+![Block Diagram](images/block.png)
 
 ---
 
