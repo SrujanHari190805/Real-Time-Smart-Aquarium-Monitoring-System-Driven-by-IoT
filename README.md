@@ -44,7 +44,7 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 ```
 
 <p align="center"> <img src="images/block.png" alt="System block diagram" width="600"> </p>
-
+<p align="center"> Block Diagram of the system </p>
 ---
 
 ## 🔧 Hardware Components
@@ -63,6 +63,7 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 | Cloud Platform | Blynk | Remote monitoring, alerts, historical data, manual control |
 
 <p align="center"> <img src="images/hardware.jpg" alt="Hardware setup" width="300"> </p>
+<p align="center"> Hardware setup </p>
 ---
 
 ## ⚙️ Automation Logic
@@ -86,6 +87,7 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 - System response and stabilisation are clearly visible in the temperature-vs-time graph
 
 <p align="center"> <img src="images/heating.svg" alt="Heating system graph" width="300"> </p>
+<p align="center"> Heating system response graph </p>
 
 ### Cooling System
 - Activates when water temperature exceeds **33°C**
@@ -93,12 +95,14 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 - Prevents dangerous thermal extremes that can harm aquatic life
 
 <p align="center"> <img src="images/cooling.svg" alt="Cooling system graph" width="300"> </p>
+<p align="center"> Cooling system performance graph</p>
 
 ### Water Level Regulation
 - Automated relay-based control keeps water level within set parameters
 - Minimal deviation from target level; rapid response to fluctuations
 
 <p align="center"> <img src="images/water_level.svg" alt="Water level graph" width="300"> </p>
+<p align="center"> Automated water level control graph </p>
 
 ### Power Management
 - Solar panels supply a significant portion of system energy needs
@@ -106,6 +110,7 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 - Measurably reduces dependence on mains electricity
 
 <p align="center"> <img src="images/power.svg" alt="Power management graph" width="300"> </p>
+<p align="center"> Solar power utilization and battery management performance </p>
 
 ### Video Monitoring
 - ESP32-CAM provides real-time visual monitoring of the aquarium
@@ -113,6 +118,7 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 - Complements sensor data for a comprehensive monitoring experience
 
 <p align="center"> <img src="images/cam.jpg" alt="ESP32-CAM feed" width="300"> </p>
+<p align="center"> Real-time video monitoring interface </p>
 
 ---
 
@@ -125,7 +131,7 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 - **Live video** feed from ESP32-CAM
 
 <p align="center"> <img src="images/blynk.jpg" alt="Blynk dashboard" width="200"> </p>
-
+<p align="center"> Blynk IoT mobile dashboard </p>
 ---
 
 ## 🌱 Sustainability
