@@ -1,111 +1,139 @@
-# 🐟 Real-Time Smart Aquarium Monitoring System
+# Real-Time Smart Aquarium Monitoring System Driven by IoT
 
-> **Published at IEEE SETCOM 2025**
+> An ESP32-based IoT system for comprehensive aquarium management — monitors water temperature, TDS, humidity, and water level in real-time, automates heating/cooling/pumping, and streams live video via ESP32-CAM. Solar-powered for eco-friendly continuous operation.
 
-An IoT-based water quality monitoring system using ESP32 that automates aquatic habitat maintenance through continuous multi-parameter sensing, threshold-based alerts, and cloud dashboard integration.
-
----
-
-## 📌 Problem Statement
-
-Manual aquarium maintenance is unreliable — water quality parameters like pH, dissolved oxygen, and temperature can shift dangerously within hours. Hobbyists and aquaculture operators lack affordable, automated tools to monitor and respond to these changes in real time.
-
----
-
-## 💡 Solution
-
-A fully automated IoT monitoring system that continuously tracks four critical water-quality parameters, triggers actuators based on threshold violations, and logs all data to a cloud dashboard for remote monitoring and historical trend analysis.
-
----
-
-## 🏗️ System Architecture
-
-```
-[Water Quality Sensors]
-   ├── pH Sensor
-   ├── Dissolved Oxygen Sensor
-   ├── Temperature Sensor (DS18B20)
-   └── Turbidity Sensor
-         │
-   [ESP32 Microcontroller]
-         │
-   ├── Real-time threshold evaluation
-   ├── Actuator control (pump, heater, aerator)
-   └── Wi-Fi data transmission
-         │
-   [ThingSpeak Cloud]
-         └── Live dashboard
-         └── Historical trend graphs
-         └── Alert notifications
-```
-
----
-
-## ⚙️ Hardware Stack
-
-| Component | Purpose |
-|---|---|
-| ESP32 | Main microcontroller with Wi-Fi |
-| pH Electrode + Amplifier | Water pH monitoring |
-| DO Sensor (Gravity) | Dissolved oxygen measurement |
-| DS18B20 | Waterproof temperature sensing |
-| Turbidity Sensor | Water clarity monitoring |
-| Relay Module | Actuator control (pump/heater) |
-| OLED Display | Local parameter readout |
-
----
-
-## 💻 Firmware Features
-
-- **Language:** Embedded C (Arduino Framework)
-- **Platform:** ESP32
-- Continuous multi-sensor polling
-- Real-time threshold-based actuator control
-- Alert generation on parameter violations
-- Periodic cloud sync to ThingSpeak
-- Sensor fusion for correlated parameter analysis
-
----
-
-## 📊 Monitored Parameters & Thresholds
-
-| Parameter | Safe Range | Action on Violation |
-|---|---|---|
-| pH | 6.8 – 7.8 | Alert + dosing pump trigger |
-| Dissolved Oxygen | > 5 mg/L | Alert + aerator activation |
-| Temperature | 24°C – 28°C | Alert + heater control |
-| Turbidity | < 100 NTU | Alert + filter pump trigger |
-
----
-
-## ☁️ Cloud Integration
-
-- **Platform:** ThingSpeak
-- Real-time multi-channel data logging
-- Live graphs accessible remotely
-- Historical data export for trend analysis
-
----
-
-## 📈 Results
-
-- Extended real-world deployment trials conducted
-- Sensor fusion techniques validated across correlated parameters
-- Significant reduction in manual inspection effort
-- Improved aquatic habitat maintenance accuracy
+![IEEE Published](https://img.shields.io/badge/Published-IEEE%20SETCOM%202025-blue)
+![Platform](https://img.shields.io/badge/Platform-ESP32%20%7C%20Blynk%20%7C%20Solar-green)
+![DOI](https://img.shields.io/badge/DOI-10.1109%2FSETCOM-lightgrey)
 
 ---
 
 ## 📄 Publication
 
-> **"Real Time Smart Aquarium Monitoring System Driven by IoT"**
-> IEEE SETCOM 2025
-> Covers sensor fusion techniques and system performance benchmarks from extended deployment.
+> **Real-Time Smart Aquarium Monitoring System Driven by IoT**
+> Tarun Patil, Sri Srujan Hari T, Anitha M
+> *IEEE SETCOM 2025*
+> DOI: `979-8-3315-2054-0/25/$31.00 ©2025 IEEE`
 
 ---
 
-## 👤 Author
+## 🐠 Overview
 
-**Sri Srujan Hari T**
-B.E – Electronics & Communication Engineering, BMSIT&M
-[LinkedIn](https://www.linkedin.com/in/srujan-hari-undefined-1a7364399) | thammineedisrujanhari@gmail.com
+Traditional aquarium care requires constant manual monitoring and adjustments — prone to errors and insufficient for maintaining stable aquatic environments. This system automates everything: temperature regulation, water level management, and water quality monitoring, while providing remote access from anywhere via a mobile app and live video feed.
+
+---
+
+
+## 🏗️ System Architecture
+
+```
+[DS18B20]  [DHT22]  [TDS Sensor]  [Ultrasonic Level]
+    \          |          |              /
+     ──────────────────────────────────
+                      ↓
+              [ESP32 (Central Controller)]
+              /          |           \
+    [A/D Conversion]  [Wi-Fi]    [4-ch Relay Module]
+                        ↓         /    |    |    \
+                  [Blynk Cloud] [Pump][Heat][Cool][Light]
+                        |
+                  [Mobile App]
+                        ↑
+              [ESP32-CAM (Live Video)]
+
+Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
+```
+
+---
+
+## 🔧 Hardware Components
+
+| Component | Model | Purpose |
+|---|---|---|
+| Main Controller | ESP32 | Central data acquisition, processing, Blynk communication |
+| Water Temp Sensor | DS18B20 | Precise digital water temperature reading |
+| Ambient Temp + Humidity | DHT22 | Surrounding environment monitoring |
+| TDS Sensor | Generic TDS probe | Water purity (Total Dissolved Solids) measurement |
+| Water Level Sensor | Ultrasonic | Measures water level; prevents overflow or low-water damage |
+| Camera | ESP32-CAM | Live video streaming to Blynk app |
+| Relay Module | 4-channel | Automates pump, heater, cooler, and lighting |
+| Solar Panel | — | Primary power source |
+| Battery + BMS | — | Energy storage + Battery Management System |
+| Cloud Platform | Blynk | Remote monitoring, alerts, historical data, manual control |
+
+---
+
+## ⚙️ Automation Logic
+
+| Condition | Action |
+|---|---|
+| Water temp < 25°C | Heater relay ON → heat water |
+| Water temp > 33°C | Cooler relay ON → cool water |
+| Water level below minimum | Pump relay ON → fill tank |
+| Water level above maximum | Pump relay OFF → stop filling |
+| TDS out of range | Alert sent to mobile app |
+| Any parameter out of range | Push notification via Blynk |
+
+---
+
+## 📊 Performance Results
+
+### Heating System
+- Activates when water temperature drops below **25°C**
+- Restores temperature to optimal range (**26–28°C**) rapidly
+- System response and stabilisation are clearly visible in the temperature-vs-time graph
+
+### Cooling System
+- Activates when water temperature exceeds **33°C**
+- Gradually reduces temperature in a stable, controlled manner
+- Prevents dangerous thermal extremes that can harm aquatic life
+
+### Water Level Regulation
+- Automated relay-based control keeps water level within set parameters
+- Minimal deviation from target level; rapid response to fluctuations
+
+### Power Management
+- Solar panels supply a significant portion of system energy needs
+- BMS ensures reliable continuous operation even during low-sunlight periods
+- Measurably reduces dependence on mains electricity
+
+### Video Monitoring
+- ESP32-CAM provides real-time visual monitoring of the aquarium
+- Enhanced visibility under varying lighting conditions
+- Complements sensor data for a comprehensive monitoring experience
+
+---
+
+## 📱 Mobile App Features (Blynk)
+
+- **Real-time display** of water temp, level, TDS, humidity, power consumption
+- **Push alerts** when any parameter crosses set thresholds
+- **Historical data** access for trend analysis and maintenance planning
+- **Remote control** — manually adjust temperature thresholds or toggle heater/cooler directly from phone
+- **Live video** feed from ESP32-CAM
+
+---
+
+## 🌱 Sustainability
+
+The solar panel + BMS power system makes this suitable for eco-friendly, off-grid operation — reducing electricity costs and environmental impact. This is particularly relevant for aquaponics-based organic farming applications.
+
+---
+
+## 🔮 Future Improvements
+
+- pH sensor integration for complete water chemistry monitoring
+- Adaptive algorithms that learn from historical data to anticipate parameter changes
+- AI-based predictive analytics for proactive system management
+- Enhanced security for data privacy
+- Multi-tank dashboard with centralised monitoring
+
+---
+
+## 👥 Authors
+
+| Name | Email | Affiliation |
+|---|---|---|
+| Tarun Patil | tarunpatil018@gmail.com | ECE, BMSIT&M |
+| Sri Srujan Hari T | srujanharit1985@gmail.com | ECE, BMSIT&M |
+| Anitha M (Guide) | anitham@bmsit.in | ECE, BMSIT&M |
