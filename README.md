@@ -62,7 +62,7 @@ Power: [Solar Panel] → [BMS] → [Battery] → [ESP32 + Peripherals]
 | Battery + BMS | — | Energy storage + Battery Management System |
 | Cloud Platform | Blynk | Remote monitoring, alerts, historical data, manual control |
 
-<p align="center"> <img src="images/hardware.jpg" alt="Hardware setup" width="90%"> </p>
+<p align="center"> <img src="images/hardware.jpg" alt="Hardware setup" width="300"> </p>
 ---
 
 ## ⚙️ Automation Logic
